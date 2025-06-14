@@ -1,6 +1,16 @@
 import { dlopen, FFIType, suffix } from 'bun:ffi';
+import { existsSync } from 'fs';
+import { join } from 'path';
 
-const lib = dlopen(`./rustlib.${suffix}`, {
+const libPath = join(import.meta.dir, `rustlib.${suffix}`);
+
+if (!existsSync(libPath)) {
+    console.error(`Error: Library file not found in "${libPath}"`);
+    console.log('Expected directory:', import.meta.dir);
+    throw new Error('Library file not found');
+};
+
+const lib = dlopen(libPath, {
     add: {
         args: [FFIType.i32, FFIType.i32],
         returns: FFIType.i32,
