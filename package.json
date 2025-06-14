@@ -2,6 +2,11 @@
   "name": "bun-ffi",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "dev": "bun build-rs && bun start",
+    "start": "bun run ./src/index.ts",
+    "build-rs": "cd ./rust && cargo buil --release"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
