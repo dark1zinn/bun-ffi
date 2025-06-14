@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "bun build-rs && bun start",
     "start": "bun run ./src/index.ts",
-    "build-rs": "cd ./rust && cargo build --release"
+    "build-rs": "cd ./rust && cargo build --release",
+    "up": "bun build-rs && bun ./bun_build.js"
   },
   "devDependencies": {
     "@types/bun": "latest"
