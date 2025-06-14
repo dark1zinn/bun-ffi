@@ -3,8 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun build-rs && bun start",
-    "start": "bun run ./dist/index.js",
+    "dev": "bun build-rs && bun test",
     "build-rs": "cd ./rust && cargo build --release",
     "up": "bun build-rs && bun ./bun_build.js"
   },
