@@ -2,7 +2,7 @@ import { dlopen, FFIType, suffix } from 'bun:ffi';
 import { existsSync } from 'fs';
 import { join } from 'path';
 
-const libPath = join(import.meta.dir, `rustlib.${suffix}`);
+const libPath = join(import.meta.dir, `bun_ffi.${suffix}`);
 
 if (!existsSync(libPath)) {
     console.error(`Error: Library file not found in "${libPath}"`);
