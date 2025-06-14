@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun build-rs && bun test",
+    "dev": "bun up && bun test",
     "build-rs": "cd ./rust && cargo build --release",
     "up": "bun build-rs && bun ./bun_build.js"
   },
