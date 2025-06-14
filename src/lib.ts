@@ -1,6 +1,6 @@
 import { dlopen, FFIType, suffix } from 'bun:ffi';
 
-const lib = dlopen(`../rust/target/release/rustlib.${suffix}`, {
+const lib = dlopen(`./rustlib.${suffix}`, {
     add: {
         args: [FFIType.i32, FFIType.i32],
         returns: FFIType.i32,
